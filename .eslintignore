@@ -1,0 +1,4 @@
+*.d.ts
+*.js
+coverage
+node_modules
