@@ -11,6 +11,7 @@
     "lint": "eslint --ignore-pattern node_modules --fix \"lib/**/*.ts\"",
     "prepublishOnly": "npm run compile && npm run lint",
     "test": "jest",
+    "test:clean": "jest --clearCache",
     "watch": "tsc -w"
   },
   "dependencies": {

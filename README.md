@@ -17,5 +17,6 @@ For more information on working with the CDK, see the [CDK developer guide](http
 * `cdk diff`        compare deployed stack with current state
 * `cdk synth`       emits the synthesized CloudFormation template
 * `npm run build`   compile typescript to js
-* `npm run test`    perform the jest unit tests
+* `npm run test`    run jest unit tests
+* `npm run test:clean` clear the jest test cache
 * `npm run watch`   watch for changes and compile
