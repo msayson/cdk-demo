@@ -8,7 +8,6 @@ export class CdkDemoStack extends Stack {
     super(scope, id, props);
 
     new SecureBucket(this, 'DemoS3Bucket', {
-      bucketName: 'some-unique-bucket-name',
       encryption: BucketEncryption.S3_MANAGED
     });
   }
