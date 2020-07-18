@@ -11,5 +11,6 @@ cdk.out
 # Parcel default cache directory
 .parcel-cache
 
-# IDE generated files
+# Developer-specific IDE files
+*.sublime-project
 *.sublime-workspace
