@@ -1,13 +1,15 @@
-import { expect as expectCDK, matchTemplate, MatchStyle } from '@aws-cdk/assert';
+import { expect as expectCDK, haveResource } from '@aws-cdk/assert';
 import { App } from '@aws-cdk/core';
 
 import { CdkDemoStack } from '../../lib/stacks/cdk-demo-stack';
 
-test('Empty Stack', () => {
-  const app = new App();
-  const stack = new CdkDemoStack(app, 'MyTestStack');
+describe('CdkDemoStack', () => {
+  const app: App = new App();
 
-  expectCDK(stack).to(matchTemplate({
-    "Resources": {}
-  }, MatchStyle.EXACT))
+  describe('constructor', () => {
+    it('successfully creates a stack with a S3 bucket', () => {
+      const stack: CdkDemoStack = new CdkDemoStack(app, 'MyTestStack');
+      expectCDK(stack).to(haveResource('AWS::S3::Bucket'));
+    });
+  });
 });
