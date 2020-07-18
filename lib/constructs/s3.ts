@@ -26,7 +26,11 @@ export interface SecureBucketProps extends BucketProps {
   readonly publicReadAccess?: false;
 }
 
-// Applies a security baseline to S3 buckets created as instances of this class
+// Applies a security baseline to S3 buckets created as instances of this class:
+// - Block public access by default
+// - Require bucket encryption to be enabled
+// - Require encryption of uploaded objects
+// - Require API requests to be over encrypted connections (eg. HTTPS)
 export class SecureBucket extends Bucket {
   public constructor(scope: Construct, id: string, props: SecureBucketProps) {
     super(scope, id, {
@@ -39,6 +43,7 @@ export class SecureBucket extends Bucket {
   }
 
   // By default, deny requests to bucket resources made over unencrypted connections
+  // Ref: https://aws.amazon.com/blogs/security/how-to-use-bucket-policies-and-apply-defense-in-depth-to-help-secure-your-amazon-s3-data/
   private denyInsecureTransport(): void {
     this.addToResourcePolicy(new PolicyStatement({
       actions: ['s3:*'],
