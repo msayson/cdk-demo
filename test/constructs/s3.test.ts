@@ -54,7 +54,7 @@ describe('SecureBucket', () => {
             },
             {
               Action: 's3:PutObject',
-              Condition: { Null: { 's3::x-amz-server-side-encryption': 'true' } },
+              Condition: { Null: { 's3:x-amz-server-side-encryption': 'true' } },
               Effect: Effect.DENY,
               Principal: '*',
               Resource: cfnResourceForBucketObjects

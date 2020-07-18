@@ -62,7 +62,7 @@ export class SecureBucket extends Bucket {
     this.addToResourcePolicy(new PolicyStatement({
       actions: ['s3:PutObject'],
       conditions: {
-        Null: { 's3::x-amz-server-side-encryption': 'true' }
+        Null: { 's3:x-amz-server-side-encryption': 'true' }
       },
       effect: Effect.DENY,
       principals: [new AnyPrincipal()],
