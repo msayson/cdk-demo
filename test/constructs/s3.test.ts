@@ -49,14 +49,14 @@ describe('SecureBucket', () => {
               Action: 's3:*',
               Condition: { Bool: { 'aws:SecureTransport': 'false' } },
               Effect: Effect.DENY,
-              Principal: '*',
+              Principal: { AWS: '*' },
               Resource: cfnResourceForBucketObjects
             },
             {
               Action: 's3:PutObject',
               Condition: { Null: { 's3:x-amz-server-side-encryption': 'true' } },
               Effect: Effect.DENY,
-              Principal: '*',
+              Principal: { AWS: '*' },
               Resource: cfnResourceForBucketObjects
             }
           ],
