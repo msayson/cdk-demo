@@ -1,5 +1,10 @@
 {
   "name": "cdk-demo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/msayson/cdk-demo.git"
+  },
   "version": "0.1.0",
   "bin": {
     "cdk-demo": "bin/cdk-demo.js"
