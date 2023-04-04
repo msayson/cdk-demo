@@ -6,7 +6,7 @@ For more information on working with the CDK, see the [CDK developer guide](http
 
 ## Developer set-up
 
-* Install [Node JS](https://nodejs.org). This project uses Node JS 12.18.2.
+* Install [Node JS](https://nodejs.org). This project uses Node JS v16.
 * Install the AWS CDK and TypeScript, eg. `npm install -g aws-cdk && npm install -g typescript`.
 * Git clone this package and run `npm install`.
 * Run `npm test` and verify that the build succeeds.
