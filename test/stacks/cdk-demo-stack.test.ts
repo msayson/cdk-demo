@@ -1,5 +1,5 @@
-import { expect as expectCDK, haveResource } from '@aws-cdk/assert';
 import { App } from 'aws-cdk-lib';
+import { Template } from 'aws-cdk-lib/assertions';
 
 import { CdkDemoStack } from '../../lib/stacks/cdk-demo-stack';
 
@@ -9,7 +9,7 @@ describe('CdkDemoStack', () => {
   describe('constructor', () => {
     it('successfully creates a stack with a S3 bucket', () => {
       const stack: CdkDemoStack = new CdkDemoStack(app, 'MyTestStack');
-      expectCDK(stack).to(haveResource('AWS::S3::Bucket'));
+      Template.fromStack(stack).resourceCountIs('AWS::S3::Bucket', 1);
     });
   });
 });

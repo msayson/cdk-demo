@@ -1,5 +1,5 @@
-import { expect as expectCDK, haveResource } from '@aws-cdk/assert';
 import { App, Stack } from 'aws-cdk-lib';
+import { Template } from 'aws-cdk-lib/assertions';
 import { Effect } from 'aws-cdk-lib/aws-iam';
 import { BucketEncryption } from 'aws-cdk-lib/aws-s3';
 
@@ -23,7 +23,7 @@ describe('SecureBucket', () => {
       const cfnGetAttForBucketArn = { 'Fn::GetAtt': [bucketCfnId, 'Arn'] };
       const cfnResourceForBucketObjects = { 'Fn::Join': ['', [cfnGetAttForBucketArn, '/*']] };
 
-      expectCDK(stack).to(haveResource('AWS::S3::Bucket', {
+      Template.fromStack(stack).hasResourceProperties('AWS::S3::Bucket', {
         BucketEncryption: {
           ServerSideEncryptionConfiguration: [
             {
@@ -38,9 +38,9 @@ describe('SecureBucket', () => {
           IgnorePublicAcls: true,
           RestrictPublicBuckets: true
         }
-      }));
+      });
 
-      expectCDK(stack).to(haveResource('AWS::S3::BucketPolicy', {
+      Template.fromStack(stack).hasResourceProperties('AWS::S3::BucketPolicy', {
         Bucket: { Ref: bucketCfnId },
         PolicyDocument: {
           Statement: [
@@ -61,7 +61,7 @@ describe('SecureBucket', () => {
           ],
           Version: '2012-10-17'
         }
-      }));
+      });
     });
   });
 });
