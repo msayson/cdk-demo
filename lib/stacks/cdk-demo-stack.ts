@@ -1,5 +1,6 @@
-import { BucketEncryption } from '@aws-cdk/aws-s3';
-import { Construct, Stack, StackProps } from '@aws-cdk/core';
+import { Stack, StackProps } from 'aws-cdk-lib';
+import { BucketEncryption } from 'aws-cdk-lib/aws-s3';
+import { Construct } from 'constructs';
 
 import { SecureBucket } from '../constructs/s3';
 

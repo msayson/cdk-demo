@@ -1,6 +1,6 @@
-import { AnyPrincipal, Effect, PolicyStatement } from '@aws-cdk/aws-iam'
-import { BlockPublicAccess, Bucket, BucketEncryption, BucketPolicy, BucketProps } from '@aws-cdk/aws-s3';
-import { Construct } from '@aws-cdk/core';
+import { AnyPrincipal, Effect, PolicyStatement } from 'aws-cdk-lib/aws-iam';
+import { BlockPublicAccess, Bucket, BucketEncryption, BucketProps } from 'aws-cdk-lib/aws-s3';
+import { Construct } from 'constructs';
 
 // Disallows default public access to instances of SecureBucket
 export class SecureBlockPublicAccess extends BlockPublicAccess {

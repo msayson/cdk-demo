@@ -1,8 +1,7 @@
-// import { expect as expectCDK, haveResource, haveResourceLike } from '@aws-cdk/assert';
 import { expect as expectCDK, haveResource } from '@aws-cdk/assert';
-import { Effect } from '@aws-cdk/aws-iam'
-import { BucketEncryption } from '@aws-cdk/aws-s3';
-import { App, Stack } from '@aws-cdk/core';
+import { App, Stack } from 'aws-cdk-lib';
+import { Effect } from 'aws-cdk-lib/aws-iam';
+import { BucketEncryption } from 'aws-cdk-lib/aws-s3';
 
 import { SecureBucket, SecureBucketProps } from '../../lib/constructs/s3';
 

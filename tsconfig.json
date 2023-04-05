@@ -6,7 +6,6 @@
     "alwaysStrict": true,
     "declaration": true,
     "experimentalDecorators": true,
-    "inlineSources": true,
     "noFallthroughCasesInSwitch": false,
     "noImplicitAny": true,
     "noImplicitReturns": true,

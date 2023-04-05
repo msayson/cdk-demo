@@ -13,6 +13,7 @@ For more information on working with the CDK, see the [CDK developer guide](http
 
 ## Useful commands
 
+* `cdk bootstrap`   create a AWS CloudFormation "bootstrap" stack with prerequisite resources needed before you can deploy your CDK stacks
 * `cdk deploy`      deploy this stack to your default AWS account/region
 * `cdk diff`        compare deployed stack with current state
 * `cdk synth`       emits the synthesized CloudFormation template
