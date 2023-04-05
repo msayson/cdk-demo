@@ -20,13 +20,9 @@
     "watch": "tsc -w"
   },
   "dependencies": {
-    "aws-cdk-lib": "^2.0.0",
+    "aws-cdk-lib": "~2.72.0",
     "constructs": "^10.0.0",
     "source-map-support": "^0.5.16"
-  },
-  "peerDependencies": {
-    "aws-cdk-lib": "^2.0.0",
-    "constructs": "^10.0.0"
   },
   "devDependencies": {
     "@aws-cdk/assert": "^2.0.0",
@@ -34,8 +30,6 @@
     "@types/node": "10.17.5",
     "@typescript-eslint/eslint-plugin": "^3.6.1",
     "@typescript-eslint/parser": "^3.6.1",
-    "aws-cdk-lib": "^2.0.0",
-    "constructs": "^10.0.0",
     "eslint": "^7.4.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jest": "^23.9",

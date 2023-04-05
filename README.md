@@ -10,6 +10,7 @@ For more information on working with the CDK, see the [CDK developer guide](http
 * Install the AWS CDK and TypeScript, eg. `npm install -g aws-cdk && npm install -g typescript`.
 * Git clone this package and run `npm install`.
 * Run `npm test` and verify that the build succeeds.
+* Set up your [AWS CLI environment](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html) to enable deploying CDK stacks to your AWS account.
 
 ## Useful commands
 
@@ -17,7 +18,6 @@ For more information on working with the CDK, see the [CDK developer guide](http
 * `cdk deploy`      deploy this stack to your default AWS account/region
 * `cdk diff`        compare deployed stack with current state
 * `cdk synth`       emits the synthesized CloudFormation template
-* `npm run build`   compile typescript to js
-* `npm run test`    run jest unit tests
 * `npm run test:clean` clear the jest test cache
 * `npm run watch`   watch for changes and compile
+* `npm test`        run jest unit tests
