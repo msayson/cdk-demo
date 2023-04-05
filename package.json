@@ -26,12 +26,12 @@
     "source-map-support": "^0.5.16"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "~1.133.0",
+    "@aws-cdk/assert": "^2.0.0",
     "@types/jest": "^27.0",
     "@types/node": "10.17.5",
     "@typescript-eslint/eslint-plugin": "^3.6.1",
     "@typescript-eslint/parser": "^3.6.1",
-    "aws-cdk": "~1.133.0",
+    "aws-cdk": "^2.0.0",
     "eslint": "^7.4.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jest": "^23.9",
