@@ -4,6 +4,15 @@ This is a demo project working with the Amazon Cloud Development Kit (CDK) in Ty
 
 For more information on working with the CDK, see the [CDK developer guide](https://docs.aws.amazon.com/cdk/latest/guide/home.html).
 
+## Constructs
+
+### constructs/s3.ts
+**SecureBucket**: extends `s3.Bucket` with the following security baseline:
+* Block public access by default
+* Require bucket encryption to be enabled
+* Require encryption of uploaded objects
+* Require API requests to be over encrypted connections (eg. HTTPS)
+
 ## Developer set-up
 
 * Install [Node JS](https://nodejs.org).
