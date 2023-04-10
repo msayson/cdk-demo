@@ -2,7 +2,10 @@ import { AnyPrincipal, Effect, PolicyStatement } from 'aws-cdk-lib/aws-iam';
 import { BlockPublicAccess, Bucket, BucketEncryption, BucketProps } from 'aws-cdk-lib/aws-s3';
 import { Construct } from 'constructs';
 
-// Disallows default public access to instances of SecureBucket
+/**
+ * Static S3 bucket configuration that disallows public access
+ * not explicitly allowed by resource policies.
+ */
 export class SecureBlockPublicAccess extends BlockPublicAccess {
   public constructor() {
     super({
@@ -14,23 +17,29 @@ export class SecureBlockPublicAccess extends BlockPublicAccess {
   }
 }
 
-// Applies a security baseline to user-defined properties for SecureBucket
+/**
+ * S3 bucket properties that apply the following security baseline:
+ * - Block public access not explicitly allowed by resource policies
+ * - Require bucket encryption
+ */
 export interface SecureBucketProps extends BucketProps {
-  // Do not allow public access to buckets by default
+  /** Public access configuration. Statically set to block public access by default. */
   readonly blockPublicAccess?: SecureBlockPublicAccess;
 
-  // Require that some form of bucket encryption is used
+  /** Which type of bucket encryption to use. */
   readonly encryption: BucketEncryption.KMS | BucketEncryption.KMS_MANAGED | BucketEncryption.S3_MANAGED;
 
-  // Do not allow public read access to bucket contents
+  /** Whether public read access to bucket contents is enabled. Statically set to false. */
   readonly publicReadAccess?: false;
 }
 
-// Applies a security baseline to S3 buckets created as instances of this class:
-// - Block public access by default
-// - Require bucket encryption to be enabled
-// - Require encryption of uploaded objects
-// - Require API requests to be over encrypted connections (eg. HTTPS)
+/**
+ * S3 bucket that applies the following security baseline:
+ * - Block public access by default
+ * - Require bucket encryption to be enabled
+ * - Require encryption of uploaded objects
+ * - Require API requests to be over encrypted connections (eg. HTTPS)
+ */
 export class SecureBucket extends Bucket {
   public constructor(scope: Construct, id: string, props: SecureBucketProps) {
     super(scope, id, {

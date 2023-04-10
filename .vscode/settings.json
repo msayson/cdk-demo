@@ -3,6 +3,7 @@
         "**/.vscode": true,
         "**/cdk.out": true,
         "**/coverage": true,
+        "**/docs": true,
         "**/node_modules": true
     }
 }

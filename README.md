@@ -20,6 +20,12 @@ For more information on working with the CDK, see the [CDK developer guide](http
 * `cdk deploy`      deploy CDK stacks to your default AWS account/region
 * `cdk diff`        compare deployed stack with current state
 * `cdk synth`       emit the synthesized CloudFormation template
+* `npm run docs`    generate code documentation at docs/index.html which can be viewed in a browser
 * `npm run test:clean` clear the jest test cache
 * `npm run watch`   watch for changes and compile
 * `npm test`        run jest unit tests
+
+## References
+
+* AWS CDK guide: https://docs.aws.amazon.com/cdk/v2/guide
+* aws/aws-cdk Git repository: https://github.com/aws/aws-cdk
