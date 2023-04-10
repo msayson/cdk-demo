@@ -48,6 +48,9 @@
     "collectCoverageFrom": [
       "<rootDir>/lib/**/*.ts"
     ],
+    "coveragePathIgnorePatterns": [
+      "!*.d.ts"
+    ],
     "coverageReporters": [
       "text",
       "cobertura",
