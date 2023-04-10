@@ -1,0 +1,8 @@
+{
+    "files.exclude": {
+        "**/.vscode": true,
+        "**/cdk.out": true,
+        "**/coverage": true,
+        "**/node_modules": true
+    }
+}
